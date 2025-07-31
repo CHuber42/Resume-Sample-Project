@@ -19,4 +19,8 @@ CRITICAL COMPONENTS
 
 7. Access Storage (Media/Etc)
 
-8. Test
+8. Bottom Nav Bar
+
+9. Thread Pool Manager / Coroutines
+
+10. WebViews
