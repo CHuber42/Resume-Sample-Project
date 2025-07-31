@@ -5,7 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.chuberresumesample.functionalityproviders.layouts.Home
-import com.example.chuberresumesample.functionalityproviders.layouts.Login
+import com.example.chuberresumesample.functionalityproviders.layouts.TextFieldScreen
 import com.example.chuberresumesample.ui.theme.ChuberresumesampleTheme
 
 @Composable
@@ -21,8 +21,8 @@ fun CreateMainActivityNavHost() {
                     navController = navController
                 )
             }
-            composable(NavigationItem.Login.route) {
-                Login(
+            composable(NavigationItem.TextFieldScreen.route) {
+                TextFieldScreen(
                     navController = navController
                 )
             }

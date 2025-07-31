@@ -22,7 +22,7 @@ fun Home(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Button(onClick = { navController.navigate(Screens.LOGIN.name)}) {
+        Button(onClick = { navController.navigate(Screens.TEXTFIELDSCREEN.name)}) {
             Text("Go To Next Screen")
         }
         Spacer(modifier = Modifier.height(8.dp))

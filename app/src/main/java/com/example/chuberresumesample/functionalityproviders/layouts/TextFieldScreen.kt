@@ -1,6 +1,5 @@
 package com.example.chuberresumesample.functionalityproviders.layouts
 
-import android.graphics.Color
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -21,7 +20,7 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
-fun Login(navController: NavController) {
+fun TextFieldScreen(navController: NavController) {
     var text by remember {
         mutableStateOf("")
     }
