@@ -41,6 +41,13 @@ android {
 
 dependencies {
 
+    // "incorporate-navigation-and-create-first-new-screen"
+    val material3_version = "1.3.2"
+    implementation("androidx.compose.material3:material3:$material3_version")
+    val nav_version="2.9.3"
+    implementation("androidx.navigation:navigation-compose:$nav_version")
+
+    //Baseline - Bundled with New Project
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
