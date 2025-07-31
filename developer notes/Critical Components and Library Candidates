@@ -1,0 +1,22 @@
+CRITICAL COMPONENTS
+
+1. UX
+    -Compose
+    -XML
+    -Navigation
+
+2. Internet / API I/O
+    -Volley
+    -OkHttp3
+
+3. UserPreferences I/O
+
+4. SQLite I/O
+
+5. Bluetooth
+
+6. Location
+
+7. Access Storage (Media/Etc)
+
+8.
