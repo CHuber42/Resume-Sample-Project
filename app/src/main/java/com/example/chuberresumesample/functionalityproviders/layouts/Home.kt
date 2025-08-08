@@ -13,10 +13,12 @@ import androidx.compose.material3.Button
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.navigation.NamedNavArgument
+import androidx.navigation.NavType
+import androidx.navigation.navArgument
 
 @Composable
 fun Home(navController: NavController) {
-    val msg = navController.currentBackStackEntry?.savedStateHandle?.get<String>("msg")
     Column(
         Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -26,8 +28,11 @@ fun Home(navController: NavController) {
             Text("Go To Next Screen")
         }
         Spacer(modifier = Modifier.height(8.dp))
-        msg?.let {
+        navController.currentBackStackEntry?.arguments?.getString("word")?.let {
             Text(it)
+        }
+        Button(onClick = { navController.navigate(Screens.SAMPLEVMSCREEN.name)}) {
+            Text("Go To VM Screen")
         }
     }
 }
