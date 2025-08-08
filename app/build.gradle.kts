@@ -40,6 +40,9 @@ android {
 }
 
 dependencies {
+    // "viewmodel-and-state-demo"
+    val viewModelVersion = "2.9.2"
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$viewModelVersion")
 
     // "incorporate-navigation-and-create-first-new-screen"
     val material3_version = "1.3.2"
