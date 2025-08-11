@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.example.chuberresumesample.functionalityproviders.navigation.Screens
+import com.example.chuberresumesample.functionalityproviders.navigation.NavRouteBuilder
 import com.example.chuberresumesample.ui.viewmodels.SampleViewModel
 
 @Composable
@@ -40,7 +40,7 @@ fun SampleVMScreen(
             uiState.sampleText
         )
         Button(onClick = {
-            navController.navigate("HOME/VMScreen")}) {
+            navController.navigate(NavRouteBuilder.ToHome("From VM Screen"))}) {
             Text(text = "To Home Screen")
         }
     }
