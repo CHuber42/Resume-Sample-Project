@@ -17,10 +17,15 @@ fun MainActivityNavHost() {
         val navController = rememberNavController()
         NavHost(
             navController = navController,
-            startDestination = NavigationItem.Home.route.plus("/{word}")
+            startDestination = "HOME?word=Startup"
         ) {
-            composable(NavigationItem.Home.route
-                .plus("/{word}")) {
+            composable("HOME?word={word}",
+                arguments = listOf(
+                    navArgument("word") {
+                        type=NavType.StringType
+                        nullable=true
+                    }
+                )){
                 Home(
                     navController = navController,
                 )

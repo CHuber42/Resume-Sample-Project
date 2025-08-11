@@ -40,12 +40,8 @@ fun SampleVMScreen(
             uiState.sampleText
         )
         Button(onClick = {
-            navController.navigate(Screens.HOME.name
-                .plus("/Came From VM Screen; Text is: ")
-                .plus(uiState.sampleText))
-        }) {
+            navController.navigate("HOME/VMScreen")}) {
             Text(text = "To Home Screen")
         }
-
     }
 }

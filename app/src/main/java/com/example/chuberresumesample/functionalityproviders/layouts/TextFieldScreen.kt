@@ -37,9 +37,7 @@ fun TextFieldScreen(navController: NavController) {
             )
         Spacer(Modifier.height(8.dp))
         Button(onClick = {
-            navController.navigate(Screens.HOME.name
-                .plus("/Came From TextField Screen; Text is: ")
-                .plus(text))
+            navController.navigate("HOME/TextScreen")
         }) {
             Text(text = "Submit")
         }
