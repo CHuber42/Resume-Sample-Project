@@ -1,8 +1,7 @@
 package com.example.chuberresumesample.functionalityproviders.navigation
 
-enum class Screens {
-
-}
+// Not to be used while declaring "composable" within a NavHost. See: NavDestinationBuilder.
+// DO use within navigation.navigate {} blocks.
 
 class NavRouteBuilder() {
     companion object {
