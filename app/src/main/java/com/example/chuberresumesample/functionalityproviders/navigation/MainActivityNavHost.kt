@@ -17,7 +17,7 @@ fun MainActivityNavHost() {
         val navController = rememberNavController()
         NavHost(
             navController = navController,
-            startDestination = "HOME?word=Startup"
+            startDestination = NavRouteBuilder.Home(textBoxWord = "Startup")
         ) {
             composable("HOME?word={word}",
                 arguments = listOf(
