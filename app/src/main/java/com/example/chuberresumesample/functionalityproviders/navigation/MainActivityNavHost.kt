@@ -17,20 +17,28 @@ fun MainActivityNavHost() {
         val navController = rememberNavController()
         NavHost(
             navController = navController,
-            startDestination = NavigationItem.Home.route.plus("/{word}")
+            startDestination = NavRouteBuilder.ToHome("Startup")
         ) {
-            composable(NavigationItem.Home.route
-                .plus("/{word}")) {
+            composable(
+                NavDestinationBuilder.Home(),
+                arguments = NavDestinationArgsList.HomeArgs()
+            ){
                 Home(
                     navController = navController,
                 )
             }
-            composable(NavigationItem.TextFieldScreen.route) {
+            composable(
+                NavDestinationBuilder.TextFieldScreen(),
+                arguments = NavDestinationArgsList.TextFieldScreenArgs()
+            ) {
                 TextFieldScreen(
                     navController = navController
                 )
             }
-            composable(NavigationItem.SampleVMScreen.route) {
+            composable(
+                NavDestinationBuilder.SampleVMScreen(),
+                arguments = NavDestinationArgsList.SampleVMScreenArgs()
+            ) {
                 SampleVMScreen(
                     navController = navController
                 )

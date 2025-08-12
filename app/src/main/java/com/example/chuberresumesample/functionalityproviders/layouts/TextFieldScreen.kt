@@ -17,8 +17,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.unit.dp
-import com.example.chuberresumesample.functionalityproviders.navigation.NavigationItem
-import com.example.chuberresumesample.functionalityproviders.navigation.Screens
+import com.example.chuberresumesample.functionalityproviders.navigation.NavRouteBuilder
 
 
 @Composable
@@ -37,9 +36,7 @@ fun TextFieldScreen(navController: NavController) {
             )
         Spacer(Modifier.height(8.dp))
         Button(onClick = {
-            navController.navigate(Screens.HOME.name
-                .plus("/Came From TextField Screen; Text is: ")
-                .plus(text))
+            navController.navigate(NavRouteBuilder.ToHome("From Text Screen"))
         }) {
             Text(text = "Submit")
         }

@@ -8,14 +8,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
-import com.example.chuberresumesample.functionalityproviders.navigation.Screens
 import androidx.compose.material3.Button
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
-import androidx.navigation.NamedNavArgument
-import androidx.navigation.NavType
-import androidx.navigation.navArgument
+import com.example.chuberresumesample.functionalityproviders.navigation.NavRouteBuilder
 
 @Composable
 fun Home(navController: NavController) {
@@ -24,14 +21,14 @@ fun Home(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Button(onClick = { navController.navigate(Screens.TEXTFIELDSCREEN.name)}) {
-            Text("Go To Next Screen")
+        Button(onClick = { navController.navigate(NavRouteBuilder.ToTextFieldScreen())}) {
+            Text("Go To TextField Screen")
         }
         Spacer(modifier = Modifier.height(8.dp))
         navController.currentBackStackEntry?.arguments?.getString("word")?.let {
             Text(it)
         }
-        Button(onClick = { navController.navigate(Screens.SAMPLEVMSCREEN.name)}) {
+        Button(onClick = { navController.navigate(NavRouteBuilder.ToSampleVMScreen())}) {
             Text("Go To VM Screen")
         }
     }
