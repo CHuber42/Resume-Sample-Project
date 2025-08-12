@@ -22,6 +22,10 @@ class NavDestinationBuilder() {
             val base = ScreenBaseNames.VMNAVEXAMPLESCREEN.name
             return base
         }
+        fun ApiExampleScreen() : String {
+            val base = ScreenBaseNames.APIEXAMPLESCREEN.name
+            return base
+        }
     }
 }
 
@@ -38,6 +42,9 @@ class NavDestinationArgsList() {
             return listOf()
         }
         fun TextFieldExampleScreenArgs() : List<NamedNavArgument> {
+            return listOf()
+        }
+        fun ApiExampleScreenArgs() : List<NamedNavArgument> {
             return listOf()
         }
     }
