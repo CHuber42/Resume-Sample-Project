@@ -1,4 +1,4 @@
-package com.example.chuberresumesample.functionalityproviders.layouts
+package com.example.chuberresumesample.ui.mainactivitycontents.homescreen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -15,7 +15,7 @@ import androidx.compose.foundation.layout.height
 import com.example.chuberresumesample.functionalityproviders.navigation.NavRouteBuilder
 
 @Composable
-fun Home(navController: NavController) {
+fun HomeScreen(navController: NavController) {
     Column(
         Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,

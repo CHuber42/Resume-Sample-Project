@@ -10,16 +10,16 @@ import androidx.navigation.navArgument
 class NavDestinationBuilder() {
     companion object {
         fun Home() : String {
-            val base = ScreenBaseNames.HOME.name
+            val base = ScreenBaseNames.HOMESCREEN.name
             val firstArg = "?word={word}"
             return base + firstArg
         }
         fun TextFieldScreen() : String {
-            val base = ScreenBaseNames.TEXTFIELDSCREEN.name
+            val base = ScreenBaseNames.TEXTFIELDEXAMPLESCREEN.name
             return base
         }
         fun SampleVMScreen() : String {
-            val base = ScreenBaseNames.SAMPLEVMSCREEN.name
+            val base = ScreenBaseNames.VMNAVEXAMPLESCREEN.name
             return base
         }
     }
@@ -27,17 +27,17 @@ class NavDestinationBuilder() {
 
 class NavDestinationArgsList() {
     companion object {
-        fun HomeArgs() : List<NamedNavArgument> {
+        fun HomeScreenArgs() : List<NamedNavArgument> {
             val firstArg = navArgument("word") {
                 type = NavType.StringType
                 nullable = true
             }
             return listOf(firstArg)
         }
-        fun SampleVMScreenArgs() : List<NamedNavArgument> {
+        fun VMNavExampleScreenArgs() : List<NamedNavArgument> {
             return listOf()
         }
-        fun TextFieldScreenArgs() : List<NamedNavArgument> {
+        fun TextFieldExampleScreenArgs() : List<NamedNavArgument> {
             return listOf()
         }
     }
