@@ -1,14 +1,15 @@
-package com.example.chuberresumesample.functionalityproviders.navigation
+package com.example.chuberresumesample.ui.mainactivitycontents
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
-import com.example.chuberresumesample.functionalityproviders.layouts.Home
-import com.example.chuberresumesample.functionalityproviders.layouts.SampleVMScreen
-import com.example.chuberresumesample.functionalityproviders.layouts.TextFieldScreen
+import com.example.chuberresumesample.functionalityproviders.navigation.NavDestinationArgsList
+import com.example.chuberresumesample.functionalityproviders.navigation.NavDestinationBuilder
+import com.example.chuberresumesample.functionalityproviders.navigation.NavRouteBuilder
+import com.example.chuberresumesample.ui.mainactivitycontents.homescreen.HomeScreen
+import com.example.chuberresumesample.ui.mainactivitycontents.textfieldexample.TextFieldScreen
+import com.example.chuberresumesample.ui.mainactivitycontents.vmnavexample.VMNavExampleScreen
 import com.example.chuberresumesample.ui.theme.ChuberresumesampleTheme
 
 @Composable
@@ -21,15 +22,15 @@ fun MainActivityNavHost() {
         ) {
             composable(
                 NavDestinationBuilder.Home(),
-                arguments = NavDestinationArgsList.HomeArgs()
+                arguments = NavDestinationArgsList.HomeScreenArgs()
             ){
-                Home(
+                HomeScreen(
                     navController = navController,
                 )
             }
             composable(
                 NavDestinationBuilder.TextFieldScreen(),
-                arguments = NavDestinationArgsList.TextFieldScreenArgs()
+                arguments = NavDestinationArgsList.TextFieldExampleScreenArgs()
             ) {
                 TextFieldScreen(
                     navController = navController
@@ -37,9 +38,9 @@ fun MainActivityNavHost() {
             }
             composable(
                 NavDestinationBuilder.SampleVMScreen(),
-                arguments = NavDestinationArgsList.SampleVMScreenArgs()
+                arguments = NavDestinationArgsList.VMNavExampleScreenArgs()
             ) {
-                SampleVMScreen(
+                VMNavExampleScreen(
                     navController = navController
                 )
             }

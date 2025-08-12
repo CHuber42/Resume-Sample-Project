@@ -6,16 +6,16 @@ package com.example.chuberresumesample.functionalityproviders.navigation
 class NavRouteBuilder() {
     companion object {
         fun ToHome(textBoxWord: String?) : String {
-            val base = ScreenBaseNames.HOME.name
+            val base = ScreenBaseNames.HOMESCREEN.name
             val firstArg : String = "?word=" + (textBoxWord ?: "null")
             return base + firstArg
         }
         fun ToTextFieldScreen() : String {
-            val base = ScreenBaseNames.TEXTFIELDSCREEN.name
+            val base = ScreenBaseNames.TEXTFIELDEXAMPLESCREEN.name
             return base
         }
         fun ToSampleVMScreen() : String {
-            val base = ScreenBaseNames.SAMPLEVMSCREEN.name
+            val base = ScreenBaseNames.VMNAVEXAMPLESCREEN.name
             return base
         }
     }
