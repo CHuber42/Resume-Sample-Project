@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.chuberresumesample.functionalityproviders.navigation.NavDestinationArgsList
 import com.example.chuberresumesample.functionalityproviders.navigation.NavDestinationBuilder
 import com.example.chuberresumesample.functionalityproviders.navigation.NavRouteBuilder
+import com.example.chuberresumesample.ui.mainactivitycontents.apiexample.ApiExampleScreen
 import com.example.chuberresumesample.ui.mainactivitycontents.homescreen.HomeScreen
 import com.example.chuberresumesample.ui.mainactivitycontents.textfieldexample.TextFieldScreen
 import com.example.chuberresumesample.ui.mainactivitycontents.vmnavexample.VMNavExampleScreen
@@ -41,6 +42,14 @@ fun MainActivityNavHost() {
                 arguments = NavDestinationArgsList.VMNavExampleScreenArgs()
             ) {
                 VMNavExampleScreen(
+                    navController = navController
+                )
+            }
+            composable(
+                NavDestinationBuilder.ApiExampleScreen(),
+                arguments = NavDestinationArgsList.ApiExampleScreenArgs()
+            ) {
+                ApiExampleScreen(
                     navController = navController
                 )
             }

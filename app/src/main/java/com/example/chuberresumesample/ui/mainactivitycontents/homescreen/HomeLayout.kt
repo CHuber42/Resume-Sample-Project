@@ -31,5 +31,8 @@ fun HomeScreen(navController: NavController) {
         Button(onClick = { navController.navigate(NavRouteBuilder.ToSampleVMScreen())}) {
             Text("Go To VM Screen")
         }
+        Button(onClick = { navController.navigate(NavRouteBuilder.ToApiExampleScreen())}) {
+            Text("Go To API Screen")
+        }
     }
 }
