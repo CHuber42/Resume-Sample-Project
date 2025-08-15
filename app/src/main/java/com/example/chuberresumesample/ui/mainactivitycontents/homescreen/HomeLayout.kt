@@ -12,12 +12,15 @@ import androidx.compose.material3.Button
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.statusBarsPadding
 import com.example.chuberresumesample.functionalityproviders.navigation.NavRouteBuilder
 
 @Composable
 fun HomeScreen(navController: NavController) {
     Column(
-        Modifier.fillMaxSize(),
+        Modifier
+            .fillMaxSize()
+            .statusBarsPadding(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
