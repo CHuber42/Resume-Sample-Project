@@ -1,18 +1,15 @@
 package com.example.chuberresumesample.ui.mainactivitycontents.apiexample
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowDropDown
@@ -34,8 +31,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.chuberresumesample.functionalityproviders.navigation.NavRouteBuilder
 
 @Composable
@@ -64,15 +65,21 @@ fun ApiExampleScreen(
             uiState
         )
         Text(
-            "OR",
-        )
-        Text(
-            "Enter a Latitude and Longitude",
+            "OR\n Enter a Latitude and Longitude",
+            textAlign = TextAlign.Center,
+            modifier = Modifier.fillMaxWidth()
         )
         CoordinateBoxes(
             apiExampleViewModel,
             uiState
         )
+        Spacer(Modifier.height(12.dp))
+        Button(
+            onClick = { },
+            enabled = (uiState.longitudeValid && uiState.latitudeValid)
+        ) {
+            Text("Submit Query")
+        }
         Spacer(Modifier.weight(0.1F))
         Button( onClick =
             { navController.navigate(NavRouteBuilder.ToHome("From Api Screen")) },
@@ -133,7 +140,7 @@ fun CoordinateBoxes(apiExampleViewModel: ApiExampleViewModel, uiState: ApiExampl
             keyboardOptions = KeyboardOptions(
                 keyboardType = KeyboardType.Number
             ),
-            label = { Text("Latitude") },
+            label = { Text("Latitude") }
         )
         TextField(
             value = uiState.longitude,
@@ -143,6 +150,30 @@ fun CoordinateBoxes(apiExampleViewModel: ApiExampleViewModel, uiState: ApiExampl
                 keyboardType = KeyboardType.Number
             ),
             label = { Text("Longitude") }
+        )
+    }
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceEvenly,
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        val errorTextStlye = TextStyle(
+            textAlign = TextAlign.Center,
+            color = Color.Red,
+            fontStyle = FontStyle.Italic,
+            fontSize = 16.sp
+        )
+        Text(
+            text = if (uiState.latitudeValid) "" else "Latitude is Invalid",
+            style = errorTextStlye,
+            modifier = Modifier
+                .weight(0.5F)
+        )
+        Text(
+            text = if (uiState.longitudeValid) "" else "Longitude is Invalid",
+            style = errorTextStlye,
+            modifier = Modifier
+                .weight(0.5F)
         )
     }
 }
