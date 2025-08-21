@@ -40,6 +40,14 @@ android {
 }
 
 dependencies {
+
+    // "integrate-okhttp3"
+    val coroutinesVersion = "1.10.2"
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+    val okHttpVersion = "5.1.0"
+    implementation("com.squareup.okhttp3:okhttp:$okHttpVersion")
+
     // "viewmodel-and-state-demo"
     val viewModelVersion = "2.9.2"
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$viewModelVersion")

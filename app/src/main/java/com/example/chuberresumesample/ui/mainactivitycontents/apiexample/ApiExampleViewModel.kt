@@ -2,6 +2,7 @@ package com.example.chuberresumesample.ui.mainactivitycontents.apiexample
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import com.example.chuberresumesample.functionalityproviders.api.ApiProvider
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -66,5 +67,8 @@ class ApiExampleViewModel: ViewModel() {
         } catch (e: NumberFormatException) {
             return false
         }
+    }
+    fun performApiCall(){
+        ApiProvider.executeCall(uiState.value.latitude, uiState.value.longitude)
     }
 }

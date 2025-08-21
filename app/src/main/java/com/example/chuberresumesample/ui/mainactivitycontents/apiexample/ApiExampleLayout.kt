@@ -75,7 +75,7 @@ fun ApiExampleScreen(
         )
         Spacer(Modifier.height(12.dp))
         Button(
-            onClick = { },
+            onClick = { apiExampleViewModel.performApiCall() },
             enabled = (uiState.longitudeValid && uiState.latitudeValid)
         ) {
             Text("Submit Query")
