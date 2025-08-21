@@ -8,6 +8,8 @@ CRITICAL COMPONENTS
 2. Internet / API I/O
     -Volley
     -OkHttp3
+    -Target: Weather (open-meteo.com/en/docs;
+    --Example: https://api.open-meteo.com/v1/forecast?latitude=47.6062&longitude=-122.3321&hourly=temperature_2m
 
 3. UserPreferences I/O
 
