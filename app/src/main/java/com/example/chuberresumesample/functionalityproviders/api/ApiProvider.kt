@@ -16,16 +16,14 @@ class ApiProvider {
                 .url("https://api.open-meteo.com/v1/forecast?latitude=$lati&longitude=$longi&hourly=temperature_2m,relative_humidity_2m&current=temperature_2m")
                 .build()
 
-            GlobalScope.launch(Dispatchers.IO) {
-                client.newCall(request).execute().use { response ->
-                    if (!response.isSuccessful) {
-                        throw IOException("Unexpected Code $response")
-                    }
-                    for ((name, value) in response.headers) {
-                        println("$name, $value")
-                    }
-                    println(response.body.string())
+            client.newCall(request).execute().use { response ->
+                if (!response.isSuccessful) {
+                    throw IOException("Unexpected Code $response")
                 }
+                for ((name, value) in response.headers) {
+                    println("$name, $value")
+                }
+                println(response.body.string())
             }
         }
     }

@@ -41,7 +41,10 @@ android {
 
 dependencies {
 
+    
     // "integrate-okhttp3"
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
+
     val coroutinesVersion = "1.10.2"
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
