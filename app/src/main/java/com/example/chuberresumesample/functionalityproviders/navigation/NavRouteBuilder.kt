@@ -22,5 +22,9 @@ class NavRouteBuilder() {
             val base = ScreenBaseNames.APIEXAMPLESCREEN.name
             return base
         }
+        fun ToApiResultScreen() : String {
+            val base = ScreenBaseNames.APIRESULTSCREEN.name
+            return base
+        }
     }
 }

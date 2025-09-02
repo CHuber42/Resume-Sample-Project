@@ -38,6 +38,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.chuberresumesample.functionalityproviders.navigation.NavRouteBuilder
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 @Composable
 fun ApiExampleScreen(
@@ -75,7 +78,13 @@ fun ApiExampleScreen(
         )
         Spacer(Modifier.height(12.dp))
         Button(
-            onClick = { },
+            onClick = {
+                CoroutineScope(Dispatchers.Main).launch{
+                    val response = apiExampleViewModel.query()
+                    navController.currentBackStackEntry?.savedStateHandle?.set("response", response)
+                    navController.navigate(NavRouteBuilder.ToApiResultScreen())
+                }
+            },
             enabled = (uiState.longitudeValid && uiState.latitudeValid)
         ) {
             Text("Submit Query")
