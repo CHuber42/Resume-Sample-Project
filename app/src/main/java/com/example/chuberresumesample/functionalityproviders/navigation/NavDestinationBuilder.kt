@@ -26,6 +26,10 @@ class NavDestinationBuilder() {
             val base = ScreenBaseNames.APIEXAMPLESCREEN.name
             return base
         }
+        fun ApiResultScreen() : String {
+            val base = ScreenBaseNames.APIRESULTSCREEN.name
+            return base
+        }
     }
 }
 
@@ -45,6 +49,9 @@ class NavDestinationArgsList() {
             return listOf()
         }
         fun ApiExampleScreenArgs() : List<NamedNavArgument> {
+            return listOf()
+        }
+        fun ApiResultScreenArgs() : List<NamedNavArgument> {
             return listOf()
         }
     }

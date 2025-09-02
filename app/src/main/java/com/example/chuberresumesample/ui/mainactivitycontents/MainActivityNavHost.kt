@@ -8,6 +8,7 @@ import com.example.chuberresumesample.functionalityproviders.navigation.NavDesti
 import com.example.chuberresumesample.functionalityproviders.navigation.NavDestinationBuilder
 import com.example.chuberresumesample.functionalityproviders.navigation.NavRouteBuilder
 import com.example.chuberresumesample.ui.mainactivitycontents.apiexample.ApiExampleScreen
+import com.example.chuberresumesample.ui.mainactivitycontents.apiexample.ApiResultScreen
 import com.example.chuberresumesample.ui.mainactivitycontents.homescreen.HomeScreen
 import com.example.chuberresumesample.ui.mainactivitycontents.textfieldexample.TextFieldScreen
 import com.example.chuberresumesample.ui.mainactivitycontents.vmnavexample.VMNavExampleScreen
@@ -50,6 +51,14 @@ fun MainActivityNavHost() {
                 arguments = NavDestinationArgsList.ApiExampleScreenArgs()
             ) {
                 ApiExampleScreen(
+                    navController = navController
+                )
+            }
+            composable(
+                NavDestinationBuilder.ApiResultScreen(),
+                arguments = NavDestinationArgsList.ApiResultScreenArgs()
+            ) {
+                ApiResultScreen(
                     navController = navController
                 )
             }
